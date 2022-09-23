@@ -1,9 +1,9 @@
 const categories = document.querySelectorAll("li.item");
 
 
-const elementsCounter = (parentTag, childrenForCounting) => {
+const elementsCounter = (parentTag, childrenForCountingElements) => {
     const parent = document.querySelector(parentTag);
-    const children = parent.querySelectorAll(childrenForCounting);
+    const children = parent.querySelectorAll(childrenForCountingElements);
     console.log(`Number of categories: ${children.length}`);
 
     for (const category of children) {
