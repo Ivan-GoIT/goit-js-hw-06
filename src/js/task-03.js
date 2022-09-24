@@ -12,3 +12,14 @@ const images = [
     alt: 'Group of Horses Running',
   },
 ];
+
+const createImgTagWithAttributes = (url, alt) => { 
+return `<img src="${url}" alt="${alt}"/>`;
+};
+
+const allImginStr = images.reduce((str,{ url, alt }) => 
+  str+createImgTagWithAttributes(url,alt)
+  , '')
+
+document.querySelector(".gallery").insertAdjacentHTML('afterbegin', allImginStr);
+
