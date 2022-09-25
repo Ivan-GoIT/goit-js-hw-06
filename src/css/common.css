@@ -24,13 +24,24 @@ button {
 }
 
 .gallery{
-  display: flex;
-  justify-content: space-between;
-  
+display: flex;
+flex-direction: column;
+justify-content: center;
+align-items: center;
+  margin-left: 0;
+  padding-left: 0;
+
 }
 
-.gallery > img {
+.gallery__item{
+list-style-type:none;
+margin-bottom: 30px;
+border-radius: 10px;
+overflow: hidden;
+box-shadow: 2px -2px 5px black;
+}
 
-  flex-basis: calc(100%/3);
-  max-height: 100%;
+.gallery__img{
+ display: block;
+ width: 300px;
 }

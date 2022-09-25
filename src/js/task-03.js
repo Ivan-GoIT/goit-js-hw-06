@@ -13,13 +13,22 @@ const images = [
   },
 ];
 
-const createImgTagWithAttributes = (url, alt) => { 
-return `<img src="${url}" alt="${alt}"/>`;
+const createLiWithImgTagWithAttributes = (url, alt) => { 
+  const liEl = document.createElement('li');
+  liEl.classList.add('gallery__item');
+  const imgEl = document.createElement('img');
+  imgEl.classList.add('gallery__img')
+  imgEl.src = url;
+  imgEl.alt = alt;
+  liEl.append(imgEl);
+
+  return liEl.outerHTML;
 };
 
-const allImginStr = images.reduce((str,{ url, alt }) => 
-  str+createImgTagWithAttributes(url,alt)
-  , '')
+const allImginStr = images.reduce(
+  (str, { url, alt }) => str + createLiWithImgTagWithAttributes(url, alt),
+  ""
+);
 
 document.querySelector(".gallery").insertAdjacentHTML('afterbegin', allImginStr);
 
