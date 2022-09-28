@@ -15,7 +15,7 @@ function onSumbitButtonClick(event) {
   if (email.length === 0 || password.length === 0)
     return alert("Все поля должны быть заполнены");
 
-    console.log({ email, password });
-    targetFormEl.reset();
- 
+  console.log({ email, password });
+
+  targetFormEl.reset();
 }
