@@ -1,11 +1,14 @@
-const inputEl = document.querySelector("#validation-input");
-
-inputEl.addEventListener('blur', onInputValidFilling);
+document
+  .querySelector("#validation-input")
+  .addEventListener("blur", onInputValidFilling);
 
 function onInputValidFilling(event) {
-    
-    const { length } = inputEl.dataset;
-inputValue.length>=length?
+  const inputEl = event.currentTarget;
+  const correctNumbersOfSimbols =
+    inputEl.value.length >= inputEl.dataset.length;
+  const classArr = ["valid", "invalid"];
 
-    console.log(length)
+  classArr.forEach((classEl) => inputEl.classList.remove(classEl));
+
+  inputEl.classList.add(correctNumbersOfSimbols ? "valid" : "invalid");
 }
